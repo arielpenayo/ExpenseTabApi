@@ -1,0 +1,12 @@
+{
+
+  "local": {
+    "username": "root",
+    "password": "root",
+    "database": "expensetab",
+    "host": "localhost",
+    "dialect": "mysql",
+    "timezone" : "America/Asuncion",
+    "key":"Expens3T@b"
+  }
+}
