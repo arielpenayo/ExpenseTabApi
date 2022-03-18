@@ -4,11 +4,17 @@ const transaccion = require('../controllers/transaccion');
 const usuario = require('../controllers/usuario');
 const transaccionExt = require('../controllers/transaccionExt');
 const usuarioCuenta = require('../controllers/usuarioCuenta');
+const transaccionextGpbyCategoria = require('../controllers/transaccionextGpbyCategoria');
 
 
 module.exports = function(router) 
 {   
     
+    //transaccionextGpbyCategoria
+    router.get('/transaccion-ext-gpby-categoria/:id', transaccionextGpbyCategoria.findByPk);
+    router.post('/transaccion-ext-gpby-categoria-filter', transaccionextGpbyCategoria.findAllByFilter);
+    router.get('/transaccion-ext-gpby-categoria', transaccionextGpbyCategoria.findAll);
+   
     //transaccionExt
     router.get('/transaccion-ext/:id', transaccionExt.findByPk);
     router.post('/transaccion-ext-filter', transaccionExt.findAllByFilter);

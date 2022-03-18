@@ -22,6 +22,12 @@ module.exports = function (sequelize, DataTypes) {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 		},
+		usuarioCuentaId: {
+			type: DataTypes.STRING(10),
+		},
+		transaccionObservacion: {
+			type: DataTypes.TEXT,
+		},
 	}, {
 		tableName: "transaccion",
 		timestamps: false,

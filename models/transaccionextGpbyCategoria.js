@@ -1,5 +1,5 @@
 module.exports = function (sequelize, DataTypes) {
-	var transaccionExt = sequelize.define("transaccionExt", {
+	var transaccionextGpbyCategoria = sequelize.define("transaccionextGpbyCategoria", {
 		transaccionId: {
 			type: DataTypes.INTEGER.UNSIGNED,
 			
@@ -29,13 +29,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.TINYINT,
             allowNull: true
 		},
-		transaccionObservacion: {
-			type: DataTypes.TEXT,
-		},
 	}, {
-		tableName: "transaccionext",
+		tableName: "transaccion_gpby_categoria",
 		timestamps: false,
 	});
-	transaccionExt.removeAttribute('id');
-	return transaccionExt;
+	transaccionextGpbyCategoria.removeAttribute('id');
+	return transaccionextGpbyCategoria;
 };
