@@ -23,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
 			allowNull: false,
 		},
 		usuarioCuentaId: {
-			type: DataTypes.STRING(10),
+			type: DataTypes.INTEGER,
 		},
 		transaccionObservacion: {
 			type: DataTypes.TEXT,

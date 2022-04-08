@@ -1,7 +1,7 @@
 module.exports = function (sequelize, DataTypes) {
 	var usuarioCuenta = sequelize.define("usuarioCuenta", {
 		usuarioCuentaId: {
-			type: DataTypes.STRING(10),
+			type: DataTypes.INTEGER,
 			primaryKey: true,
 			autoIncrement:true
 		},
