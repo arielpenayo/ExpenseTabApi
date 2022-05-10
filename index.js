@@ -8,6 +8,9 @@ var fs = require('fs');
 var routes = require('./routes');
 var app = express();
 var server = app.listen();
+const cron = require('node-cron');
+var mailer = require('./mailer/mailer');
+
 server.setTimeout(500000);
 
 
@@ -52,4 +55,15 @@ process.env.TZ = "GMT-4";
 app.set("port", 3456);
 app.listen(app.get("port"), function () {
   console.log(`API Server listen on ${3456}`);
+});
+
+
+cron.schedule(' */2 * * * * ',() => {
+  mailer.enviarCorreo()
+  .then((result) => {
+    console.log("result",result)
+  })
+  .catch((err) => {
+    console.log('err :>> ', err);        
+  });
 });

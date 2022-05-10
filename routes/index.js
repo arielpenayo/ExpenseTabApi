@@ -5,20 +5,33 @@ const usuario = require('../controllers/usuario');
 const transaccionExt = require('../controllers/transaccionExt');
 const usuarioCuenta = require('../controllers/usuarioCuenta');
 const transaccionextGpbyCategoria = require('../controllers/transaccionextGpbyCategoria');
-
 const usuarioAsesorado= require('../controllers/usuarioAsesorado');
+const usuarioAsesoradoExt= require('../controllers/usuarioAsesoradoExt');
+const emailer = require('../controllers/emailer');
 
 
 module.exports = function(router) 
 {   
-        //usuarioAsesorado
-        router.get('/usuario-asesorado', usuarioAsesorado.findAll);
-        router.get('/usuario-asesorado/:id', usuarioAsesorado.findByPk);
-        router.post('/usuario-asesorado', usuarioAsesorado.create);
-        router.put('/usuario-asesorado/:id', usuarioAsesorado.update);
-        router.delete('/usuario-asesorado/:id', usuarioAsesorado.delete);
-        router.post('/usuario-asesorado-filter', usuarioAsesorado.findAllByFilter);
-    
+    //emailer
+    router.get('/emailer', emailer.findAll);
+    router.get('/emailer/:id', emailer.findById);
+    router.post('/emailer-filter', emailer.findAllByFilter);
+    router.post('/emailer', emailer.create);
+    router.put('/emailer/:id', emailer.update);
+    router.delete('/emailer/:id', emailer.delete);
+
+    //usuarioAsesoradoExt
+    router.get('/usuario-asesorado-ext', usuarioAsesoradoExt.findAll);
+    router.get('/usuario-asesorado-ext/:id', usuarioAsesoradoExt.findByPk); 
+    router.post('/usuario-asesorado-ext-filter', usuarioAsesoradoExt.findAllByFilter);
+    //usuarioAsesorado
+    router.get('/usuario-asesorado', usuarioAsesorado.findAll);
+    router.get('/usuario-asesorado/:id', usuarioAsesorado.findByPk);
+    router.post('/usuario-asesorado', usuarioAsesorado.create);
+    router.put('/usuario-asesorado/:id', usuarioAsesorado.update);
+    router.delete('/usuario-asesorado/:id', usuarioAsesorado.delete);
+    router.post('/usuario-asesorado-filter', usuarioAsesorado.findAllByFilter);
+
     //transaccionextGpbyCategoria
     router.get('/transaccion-ext-gpby-categoria/:id', transaccionextGpbyCategoria.findByPk);
     router.post('/transaccion-ext-gpby-categoria-filter', transaccionextGpbyCategoria.findAllByFilter);

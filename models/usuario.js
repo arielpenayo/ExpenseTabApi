@@ -22,6 +22,10 @@ module.exports = function(sequelize, DataTypes) {
     usuarioCategoria: {
       type: DataTypes.TINYINT,
       allowNull: true,
+    },
+    usuarioObservacion: {
+      type: DataTypes.TEXT,
+      allowNull: true,
     }
 
   }, {
