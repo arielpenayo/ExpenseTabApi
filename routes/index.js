@@ -6,9 +6,18 @@ const transaccionExt = require('../controllers/transaccionExt');
 const usuarioCuenta = require('../controllers/usuarioCuenta');
 const transaccionextGpbyCategoria = require('../controllers/transaccionextGpbyCategoria');
 
+const usuarioAsesorado= require('../controllers/usuarioAsesorado');
+
 
 module.exports = function(router) 
 {   
+        //usuarioAsesorado
+        router.get('/usuario-asesorado', usuarioAsesorado.findAll);
+        router.get('/usuario-asesorado/:id', usuarioAsesorado.findByPk);
+        router.post('/usuario-asesorado', usuarioAsesorado.create);
+        router.put('/usuario-asesorado/:id', usuarioAsesorado.update);
+        router.delete('/usuario-asesorado/:id', usuarioAsesorado.delete);
+        router.post('/usuario-asesorado-filter', usuarioAsesorado.findAllByFilter);
     
     //transaccionextGpbyCategoria
     router.get('/transaccion-ext-gpby-categoria/:id', transaccionextGpbyCategoria.findByPk);
