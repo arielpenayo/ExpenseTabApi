@@ -6,7 +6,7 @@ MySQL - 8.0.29 : Database - expensetab
 
 /*!40101 SET NAMES utf8 */;
 
-/*!40101 SET SQL_MODE=''*/;
+/*!40101 SET SQL_MODE=''*/; 
 
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
@@ -117,9 +117,6 @@ CREATE TABLE `usuario_asesorado` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 /*Data for the table `usuario_asesorado` */
-
-insert  into `usuario_asesorado`(`usuarioAsesoradoId`,`asesoradorId`,`asesoradoId`,`usuarioAsesoradoEstado`) values 
-(4,2,1,1);
 
 /*Table structure for table `usuario_cuenta` */
 
