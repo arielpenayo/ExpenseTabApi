@@ -21,6 +21,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.STRING(200),
             allowNull: false,
           },
+          asesoradoCorreo: {
+            type: DataTypes.STRING(200),
+            allowNull: false,
+          },
         usuarioAsesoradoEstado: {
             type: DataTypes.TINYINT,
             allowNull: false

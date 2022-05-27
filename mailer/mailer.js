@@ -11,12 +11,13 @@ const environmentConfig = config[environment];
  
 
 const transporter = nodemailer.createTransport({
-    host: environmentConfig.MailerHost,
-    port: environmentConfig.MailerPort,
+    host: "smtp.office365.com",
+    port: 587,
     secure: false, // true for 465, false for other ports
-    auth: {
-        user: "arielpenayo2004@gmail.com",
-        pass: "Arielpenayo1*"
+    auth: { 
+        //ACLARACION, ACA UTILIZAR UN CORREO DE 365 o DE OUTLOOK CON AUTORIZACION SMPT, DEJO EN BLANCO POR CUESTIONES DE PRIVACIDAD, PARA MAS INFORMACION https://nodemailer.com/about/
+        user: "",
+        pass: ""
     }
 });
 module.exports = {
@@ -28,7 +29,7 @@ module.exports = {
             const actualizacion = {
                 emailerEstado: 1
             }
-            fetch(environmentConfig.MailerApiUrl + `emailer/${registroId}`, {
+            fetch("http://localhost:3456/" + `emailer/${registroId}`, {
                 method: 'PUT',
                 headers: {
                     'Accept': 'application/json',
@@ -46,7 +47,7 @@ module.exports = {
         const filtro = {
             emailerEstado: 2
         }
-        fetch(environmentConfig.MailerApiUrl + 'emailer-filter', {
+        fetch("http://localhost:3456/" + 'emailer-filter', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

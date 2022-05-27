@@ -58,7 +58,7 @@ app.listen(app.get("port"), function () {
 });
 
 
-cron.schedule(' */2 * * * * ',() => {
+cron.schedule(' * * * * * ',() => {
   mailer.enviarCorreo()
   .then((result) => {
     console.log("result",result)
